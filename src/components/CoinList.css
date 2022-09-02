@@ -1,0 +1,61 @@
+.Title {
+    font-size: 48px;
+    color: blueviolet
+}
+
+.Container {
+    padding: 0px 20px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.Header{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Overview{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.OverviewItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.OverviewItem > span:first-child {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.Description{
+    margin: 20px 0px;
+}
+
+.Tabs{
+    display: flex;
+    margin: 25px 0px;
+}
+
+.Tab{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 0px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.Tab > a {
+    display: block;
+}
