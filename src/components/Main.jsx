@@ -6,7 +6,6 @@ import CoinList from './CoinList';
 import './Main.css'
 
 const Main = () => {
-    const BASE_URL = `https://api.coinpaprika.com/v1`;
     const [coinId, setCoinId] = useState()
     const [clickData, setClickData] = useState()
     const [clickToggle, setClickToggle] = useState(false)

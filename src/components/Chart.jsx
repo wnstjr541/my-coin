@@ -15,7 +15,7 @@ function Chart({chartData}){
                     ]}
                     options={{
                         theme: {
-                            mode: "white",
+                            mode: "dark",
                         },
                         chart: {
                             height: 300,
