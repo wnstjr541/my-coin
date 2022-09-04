@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { fetchCoinInfo } from '../api';
+import { fetchCoin, fetchCoinInfo } from '../api';
 import Loading from '../Loding';
 import CoinList from './CoinList';
 import './Main.css'
@@ -14,7 +14,7 @@ const Main = () => {
     const [coinClickId , setCoinClickId] = useState()
 
     useEffect(()=>{
-        axios.get(`${BASE_URL}/coins`).then(res=>setCoinId(res))
+        fetchCoin().then(res=>setCoinId(res))
     },[])
 
     const coinClick = (data) => {
@@ -38,7 +38,7 @@ const Main = () => {
                                     src={`https://coinicons-api.vercel.app/api/icon/${data.symbol.toLowerCase()}`}
                                     className="coinImage"
                                     />
-                                    {data.name};
+                                    {data.name} -
                                 </a>
                             </li>)
                         :

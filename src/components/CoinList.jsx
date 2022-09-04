@@ -3,6 +3,7 @@ import Loading from '../Loding';
 import { fetchCoinTickers, fetchohlcv } from '../api';
 import Chart from './Chart';
 import './CoinList.css'
+import { IoIosArrowBack } from "react-icons/io";
 
 const CoinList = ({data , setClickToggle , coinClickId}) => {
 
@@ -19,15 +20,16 @@ const CoinList = ({data , setClickToggle , coinClickId}) => {
     }
 
     useEffect(()=>{
-        fetchohlcv(coinClickId).then(res => setChartData(res?.data))
+        fetchohlcv(coinClickId).then(res => setChartData(res?.data)).catch(err=>console.log(err))
         fetchCoinTickers(coinClickId).then(res=> setSupply(res?.data))
     },[coinClickId , chartToggle])
 
-    console.log(supply !== undefined)
     return (
         <>
+        
             {supply !== undefined ? 
                 <div className="Container">
+                    <button onClick={backButton} className="backIcon"><IoIosArrowBack/></button>
                     <title>
                         {data?.data?.name}
                     </title>
@@ -38,7 +40,6 @@ const CoinList = ({data , setClickToggle , coinClickId}) => {
                     </header>
                     <>
                         <div className="Overview">
-                            <button onClick={backButton}></button>
                             <div className="OverviewItem">
                             <span>Rank:</span>
                             <span>{data?.data?.rank}</span>

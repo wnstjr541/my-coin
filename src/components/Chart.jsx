@@ -1,8 +1,6 @@
 import ReactApexChart from "react-apexcharts";
 
 function Chart({chartData}){
-
-    console.log(chartData)
     return (
         <div>
         { 

@@ -18,6 +18,8 @@ export async function fetchCoinTickers(coinId) {
   }
 }
 
-export function fetchohlcv(coinId){
-  return  axios.get(`https://ohlcv-api.nomadcoders.workers.dev/?coinId=${coinId}`);
+export async function fetchohlcv(coinId){
+  if(coinId){  
+    return await axios.get(`https://ohlcv-api.nomadcoders.workers.dev/?coinId=${coinId}`);
+  }
 }
